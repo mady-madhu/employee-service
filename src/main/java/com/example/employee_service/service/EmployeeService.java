@@ -1,8 +1,7 @@
-package com.example.employee_sevice.service;
+package com.example.employee_service.service;
 
-import com.example.employee_sevice.model.Employee;
-import com.example.employee_sevice.repo.EmployeeRepo;
-import lombok.Data;
+import com.example.employee_service.model.Employee;
+import com.example.employee_service.repo.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

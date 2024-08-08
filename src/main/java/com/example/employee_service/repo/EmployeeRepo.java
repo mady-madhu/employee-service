@@ -1,6 +1,6 @@
-package com.example.employee_sevice.repo;
+package com.example.employee_service.repo;
 
-import com.example.employee_sevice.model.Employee;
+import com.example.employee_service.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

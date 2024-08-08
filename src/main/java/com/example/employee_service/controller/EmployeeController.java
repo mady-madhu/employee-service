@@ -1,8 +1,8 @@
-package com.example.employee_sevice.controller;
+package com.example.employee_service.controller;
 
 
-import com.example.employee_sevice.model.Employee;
-import com.example.employee_sevice.service.EmployeeService;
+import com.example.employee_service.model.Employee;
+import com.example.employee_service.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
