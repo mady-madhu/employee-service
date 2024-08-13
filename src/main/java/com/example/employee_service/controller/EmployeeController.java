@@ -6,13 +6,10 @@ import com.example.employee_service.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("employee")
+@RequestMapping("employee-service")
 public class EmployeeController {
 
     @Autowired
@@ -23,5 +20,12 @@ public class EmployeeController {
         System.out.println("inside controller"+employeeService);
         Employee saveEmployee = employeeService.saveEmployee(e);
         return  new ResponseEntity<>(saveEmployee, HttpStatus.CREATED);
+    }
+
+
+    @GetMapping("/employee/{id}")
+    public ResponseEntity<Employee> getEmployee(@PathVariable Integer id){
+        Employee getEmployee = employeeService.getEmployee(id);
+        return  new ResponseEntity<>(getEmployee, HttpStatus.FOUND);
     }
 }

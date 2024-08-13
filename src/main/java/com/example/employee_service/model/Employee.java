@@ -8,11 +8,13 @@ import lombok.Data;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Employee {
+public class Employee implements Serializable {
 
     @Id
     @Generated

@@ -15,4 +15,10 @@ public class EmployeeService {
         System.out.println("inside service"+employeeRepo);
         return employeeRepo.save(e);
     }
+
+    public Employee getEmployee(Integer id){
+        return employeeRepo.findById(id)
+                .map(employee -> employee)
+                .orElseThrow(() ->  new IllegalArgumentException("No user found"));
+    }
 }
