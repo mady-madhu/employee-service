@@ -5,6 +5,8 @@ import com.example.employee_service.repo.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class EmployeeService {
     @Autowired
@@ -13,10 +15,18 @@ public class EmployeeService {
 
     public Employee saveEmployee(Employee e){
         System.out.println("inside service"+employeeRepo);
+
         return employeeRepo.save(e);
     }
 
-    public Employee getEmployee(Integer id){
+    public Employee getEmployee(UUID id){
+        return employeeRepo.findById(id)
+                .map(employee -> employee)
+                .orElseThrow(() ->  new IllegalArgumentException("No user found"));
+    }
+
+
+    public Employee getEmployeeByIdAndName(UUID id, String name){
         return employeeRepo.findById(id)
                 .map(employee -> employee)
                 .orElseThrow(() ->  new IllegalArgumentException("No user found"));

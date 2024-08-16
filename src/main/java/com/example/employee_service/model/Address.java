@@ -2,7 +2,6 @@ package com.example.employee_service.model;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,15 +15,16 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Employee implements Serializable {
+public class Address implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID empId;
-    private String empName;
-    private int empSalary;
+    private UUID addressId;
+    private String city;
+    private String street;
+    private  String state;
+    private String country;
 
-    @OneToOne(mappedBy = "employee",cascade = CascadeType.ALL)
-    private Address empAddress;
-
+    @OneToOne
+    private Employee employee;
 }
