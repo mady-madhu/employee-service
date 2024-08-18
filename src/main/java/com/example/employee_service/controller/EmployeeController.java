@@ -4,6 +4,7 @@ package com.example.employee_service.controller;
 import com.example.employee_service.service.EmployeeService;
 import com.example.employee_service.vo.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +45,15 @@ public class EmployeeController {
     public ResponseEntity<Employee> replaceEmployeeDetails(@PathVariable UUID id,@RequestBody Employee employee){
         Employee getEmployee = employeeService.replaceEmployee(id,employee);
         return  new ResponseEntity<>(getEmployee, HttpStatus.OK);
+    }
+
+
+    @Value("${config.location}")
+    private String configLocation;
+
+    @GetMapping("/property")
+    public String getProperty() {
+        return configLocation;
     }
 
 

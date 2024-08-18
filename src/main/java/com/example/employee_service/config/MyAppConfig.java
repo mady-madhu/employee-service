@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 @Configuration
 public class MyAppConfig {
 
+
     @Bean
     @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
     public Student student(){
