@@ -5,6 +5,7 @@ import com.example.employee_service.service.EmployeeService;
 import com.example.employee_service.vo.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("employee-service")
+@RefreshScope
 public class EmployeeController {
 
     @Autowired

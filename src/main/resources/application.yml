@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: employeeService
+  cloud:
+    config:
+      import: configserver:http://localhost:8888
+      uri: http://localhost:8888
+      enabled: false
+      profile: dev
+  profiles:
+    active: dev
+
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
