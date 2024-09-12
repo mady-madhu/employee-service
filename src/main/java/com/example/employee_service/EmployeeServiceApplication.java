@@ -1,5 +1,6 @@
 package com.example.employee_service;
 
+import com.example.employee_service.test.Department;
 import com.example.employee_service.test.Student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,6 +25,17 @@ public class EmployeeServiceApplication  {
 		System.out.println(s2);
 		System.out.println(s2.getAddress());
 
+
+
+
+		Department d1 = (Department) ctx.getBean("department");
+		System.out.println(d1);
+		System.out.println(d1.getEmployee());
+
+
+		Department d2 = (Department) ctx.getBean("department");
+		System.out.println(d2);
+		System.out.println(d2.getEmployee());
 	}
 
 }
