@@ -20,13 +20,9 @@ public class EmployeeServiceApplication  {
 		System.out.println(s1);
 		System.out.println(s1.getAddress());
 
-
 		Student s2 = (Student) ctx.getBean("student");
 		System.out.println(s2);
 		System.out.println(s2.getAddress());
-
-
-
 
 		Department d1 = (Department) ctx.getBean("department");
 		System.out.println(d1);
@@ -37,5 +33,4 @@ public class EmployeeServiceApplication  {
 		System.out.println(d2);
 		System.out.println(d2.getEmployee());
 	}
-
 }
